@@ -1,4 +1,9 @@
 mat-tree{
-    background: coral;
+    background: brown;
     height: 100vh;
 }
+ul {
+    padding-inline-start: 10px;
+}
+
+
