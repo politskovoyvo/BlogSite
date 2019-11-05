@@ -13,3 +13,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-bottom: 0;
     list-style-type: none;
   }
+
+  .three-col-grid .grid-item  {
+    width: 20%;
+    float: left;
+  }
+ 
+  .three-col-grid .grid-item-right  {
+    width: 80%;
+    float: right;
+  }
