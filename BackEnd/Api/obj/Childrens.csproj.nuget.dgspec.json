@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProj\\Childrens\\Childrens\\Childrens.csproj": {}
+    "D:\\MyProj\\BlogGitClient\\BackEnd\\Api\\Childrens.csproj": {}
   },
   "projects": {
-    "D:\\MyProj\\Childrens\\Childrens\\Childrens.csproj": {
+    "D:\\MyProj\\BlogGitClient\\BackEnd\\Api\\Childrens.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProj\\Childrens\\Childrens\\Childrens.csproj",
+        "projectUniqueName": "D:\\MyProj\\BlogGitClient\\BackEnd\\Api\\Childrens.csproj",
         "projectName": "Childrens",
-        "projectPath": "D:\\MyProj\\Childrens\\Childrens\\Childrens.csproj",
+        "projectPath": "D:\\MyProj\\BlogGitClient\\BackEnd\\Api\\Childrens.csproj",
         "packagesPath": "C:\\Users\\Vladimir\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProj\\Childrens\\Childrens\\obj\\",
+        "outputPath": "D:\\MyProj\\BlogGitClient\\BackEnd\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

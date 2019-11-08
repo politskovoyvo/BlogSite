@@ -25,23 +25,18 @@ export class TreeItems {
 })
 
 export class ItemsComponent {
-
   
-  Array1 :Item[] = new Array;
+  @Input() 
+  Array1 : Item[];
 
   treeControl = new NestedTreeControl<TreeItems>(node => node._children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
   threeArrayItems : TreeItems[]  = new Array(); 
   
-  constructor(private _dataService:DataService) {
+  constructor() {
 
-    this._dataService.getItems().subscribe( (items:Item[]) =>  
-    {
-      this.Array1 = items; 
-    }
-    );
-
+    this.Array1 = new Array; 
     this.AddParentItems(this.Array1);
     this.dataSource.data = this.threeArrayItems;
   }

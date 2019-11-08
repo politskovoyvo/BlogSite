@@ -3,7 +3,7 @@ import {NgModule, Component, OnInit} from '@angular/core';
 import {MatTreeNestedDataSource} from '@angular/material/tree';
 
 import { DataService } from '../app/Services/DataService';
-import { Item, Folder } from '@models/Item'; 
+import { Item } from '@models/Item'; 
 
 @NgModule({
   imports: [ NestedTreeControl, MatTreeNestedDataSource , 
@@ -17,11 +17,9 @@ import { Item, Folder } from '@models/Item';
   providers: [DataService]
 })
 
-
-
 export class AppComponent implements OnInit {
    
-   _items:Item []; 
+    _items : Item [] = new Array; 
 
     constructor(private _dataService:DataService) { 
     }
@@ -33,13 +31,14 @@ export class AppComponent implements OnInit {
 
     private GetItems (){
 
-
-      var i = this._dataService.getItems();
-
-      this._dataService.getItems().subscribe( (items:Item[]) =>  
+      this._dataService.getItems().subscribe((items:Item[]) =>  
       {
-       this._items = items; 
-       
+       items.forEach(c =>  
+        { 
+          let folder : Item = new Item (c.id, c.folderName, c.parent, c.status) ; 
+
+          this._items.push(folder); 
+        }); 
       }
       ); 
     }

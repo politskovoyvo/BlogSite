@@ -1,10 +1,11 @@
 export class Item {
+    name?:string;
     id:number;
     folderName:string;
     parent:number;
     status?:string;
 
-    constructor (
+    constructor (    
     id:number, 
     folderName:string,
     parent:number,
@@ -14,13 +15,6 @@ export class Item {
         this.folderName = folderName;
         this.parent = parent;
         this.status = status;
+        this.name = folderName;
     }
 }
-
-export class Folder {
-    constructor (
-      id:number,
-      folderName:string,  
-      parent:number,
-      status:string ) { }
-  }
