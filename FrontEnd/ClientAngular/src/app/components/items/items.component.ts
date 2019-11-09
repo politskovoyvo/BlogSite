@@ -1,9 +1,10 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 import { Item } from '@models/Item';
-import { DataService } from '@models/../Services/DataService'
+import { DataService } from '@models/../Services/DataService';
+
 
 export class TreeItems {
   _item: Item;
@@ -24,23 +25,30 @@ export class TreeItems {
   providers: [DataService]
 })
 
-export class ItemsComponent {
-  
-  @Input() 
-  Array1 : Item[];
+export class ItemsComponent implements OnInit{
 
+  _dataservice : DataService; 
   treeControl = new NestedTreeControl<TreeItems>(node => node._children);
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
-  threeArrayItems : TreeItems[]  = new Array(); 
-  
-  constructor() {
+  Array1 : Item[] = new Array<Item>();
 
-    this.Array1 = new Array; 
+  async ngOnInit() 
+  {
+    await this._dataservice.getItems().toPromise().then((x:Item[]) => x.forEach((i:Item) => this.Array1.push(i) ) ); 
+
     this.AddParentItems(this.Array1);
     this.dataSource.data = this.threeArrayItems;
   }
-  
+
+  threeArrayItems : TreeItems[]  = new Array(); 
+
+  constructor(dataService : DataService) 
+  {
+    this._dataservice = dataService;
+
+  }
+
   AddParentItems (list:Item[]){
     list.forEach(i => 
     {

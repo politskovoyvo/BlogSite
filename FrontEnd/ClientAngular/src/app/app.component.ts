@@ -1,13 +1,11 @@
 import {NestedTreeControl} from '@angular/cdk/tree';
-import {NgModule, Component, OnInit} from '@angular/core';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
+import { NgModule, Component, OnInit } from '@angular/core';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { DataService } from '@models/../Services/DataService';
 
-import { DataService } from '../app/Services/DataService';
-import { Item } from '@models/Item'; 
 
 @NgModule({
-  imports: [ NestedTreeControl, MatTreeNestedDataSource , 
-             DataService],
+  imports: [ NestedTreeControl, MatTreeNestedDataSource ]
 })
 
 @Component({
@@ -19,27 +17,10 @@ import { Item } from '@models/Item';
 
 export class AppComponent implements OnInit {
    
-    _items : Item [] = new Array; 
-
-    constructor(private _dataService:DataService) { 
-    }
-
-    ngOnInit() 
+    constructor() 
     {
-      this.GetItems();
+
     }
 
-    private GetItems (){
-
-      this._dataService.getItems().subscribe((items:Item[]) =>  
-      {
-       items.forEach(c =>  
-        { 
-          let folder : Item = new Item (c.id, c.folderName, c.parent, c.status) ; 
-
-          this._items.push(folder); 
-        }); 
-      }
-      ); 
-    }
+    ngOnInit() { }
 }
