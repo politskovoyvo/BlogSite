@@ -5,6 +5,12 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Item } from '@models/Item';
 import { DataService } from '@models/../Services/DataService';
 
+@Component({
+  selector: 'app-items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.css'],
+  providers: [DataService]
+})
 
 export class TreeItems {
   _item: Item;
@@ -16,14 +22,6 @@ export class TreeItems {
     this.name = item.folderName;
   }
 }
-
-@Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css'],
-  
-  providers: [DataService]
-})
 
 export class ItemsComponent implements OnInit{
 
