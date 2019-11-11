@@ -5,13 +5,6 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { Item } from '@models/Item';
 import { DataService } from '@models/../Services/DataService';
 
-@Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.css'],
-  providers: [DataService]
-})
-
 export class TreeItems {
   _item: Item;
   name:string; 
@@ -23,6 +16,13 @@ export class TreeItems {
   }
 }
 
+@Component({
+  selector: 'app-items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.css'],
+  providers: [DataService]
+})
+
 export class ItemsComponent implements OnInit{
 
   _dataservice : DataService; 
@@ -30,27 +30,35 @@ export class ItemsComponent implements OnInit{
   dataSource = new MatTreeNestedDataSource<TreeItems>();
 
   Array1 : Item[] = new Array<Item>();
+  visible:boolean = false; 
+
 
   async ngOnInit() 
   {
-    await this._dataservice.getItems().toPromise().then((x:Item[]) => x.forEach((i:Item) => this.Array1.push(i) ) ); 
+
+    let jsonArray:Item[] = new Array<Item>();
+
+    await this._dataservice.getItems().toPromise().then((x:Item[]) => x.forEach((i:Item) => this.Array1.push(new Item( i.id, i.folderName,i.parent,i.status)) ) ); 
 
     this.AddParentItems(this.Array1);
     this.dataSource.data = this.threeArrayItems;
   }
 
-  threeArrayItems : TreeItems[]  = new Array(); 
+  threeArrayItems : TreeItems[]  = new Array; 
 
   constructor(dataService : DataService) 
   {
     this._dataservice = dataService;
+  }
 
+  mouseHover() {
+    console.log('hovered');
   }
 
   AddParentItems (list:Item[]){
     list.forEach(i => 
     {
-      if (i.parent == 0)
+      if (i.parent == 1)
       { 
         let item:Item = new Item (i.id, i.folderName, i.parent);
 
