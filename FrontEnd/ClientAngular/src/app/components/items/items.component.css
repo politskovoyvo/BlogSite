@@ -8,4 +8,9 @@ ul {
     padding-inline-start: 10px;
 }
 
+.btn-menu-class {
+    height: 15px;
+    width: 15px;
+    background: blue;
+}
 
