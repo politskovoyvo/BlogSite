@@ -1,12 +1,6 @@
-import {NestedTreeControl} from '@angular/cdk/tree';
 import { NgModule, Component, OnInit } from '@angular/core';
-import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { DataService } from '@models/../Services/DataService';
-
-
-@NgModule({
-  imports: [ NestedTreeControl, MatTreeNestedDataSource ]
-})
+import {Post} from "@models/Post";
 
 @Component({
   selector: 'app-root',
@@ -16,11 +10,22 @@ import { DataService } from '@models/../Services/DataService';
 })
 
 export class AppComponent implements OnInit {
-   
-    constructor() 
-    {
 
-    }
+  _repository: DataService;
+
+  public ParentId: number;
+  CorrectItems:Post[]=new Array<Post>();
+
+  constructor(repository: DataService) {
+    this._repository = repository;
+  }
 
     ngOnInit() { }
+
+  GetCorrectItems(id: number)
+  {
+    this.CorrectItems = [];
+    this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
+    console.log(this.CorrectItems);
+  }
 }

@@ -1,0 +1,11 @@
+.div-content-right {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #c333;
+    margin-top: 10px;
+}
+
+li {
+    margin: 10px;
+}

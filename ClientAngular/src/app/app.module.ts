@@ -7,20 +7,24 @@ import { MatTreeModule, MatIconModule, MatButtonModule} from '@angular/material'
 import { HttpClientModule } from '@angular/common/http';
 
 import { ItemsComponent } from './components/items/items.component';
+import { ContentComponent } from './components/content/content.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemsComponent
+    ItemsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     MatTreeModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

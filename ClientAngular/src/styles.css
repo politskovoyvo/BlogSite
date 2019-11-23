@@ -8,7 +8,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .example-tree-invisible {
     display: none;
   }
-  
+
   .example-tree ul,
   .example-tree li {
     margin-top: 0;
@@ -20,7 +20,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 20%;
     float: left;
   }
- 
+
   .three-col-grid .grid-item-right  {
     width: 80%;
     float: right;
