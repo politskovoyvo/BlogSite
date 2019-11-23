@@ -1,11 +1,23 @@
 .div-content-right {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    border: 2px solid #c333;
-    margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 2px solid #c333;
+  margin: 10px;
+}
+
+.div-container-row {
+  justify-content: normal;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 li {
     margin: 10px;
+}
+
+p {
+  text-align: center;
+  margin-top: 2px;
+  text-wrap: normal;
 }

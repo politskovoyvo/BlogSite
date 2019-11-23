@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItemsComponent } from './components/items/items.component';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
