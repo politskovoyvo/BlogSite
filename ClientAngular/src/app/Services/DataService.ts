@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 import { Post } from "@models/Post";
 import { Item } from "@models/Item";
@@ -17,9 +17,9 @@ export class DataService
       return this.http.get(this.url);
   }
 
-  public GetAllPost (parentId:number)
+  public GetAllPost (parentId:any)
   {
-      return this.http.get(this.url+"/GetItemsForThisParent?="+parentId);
+      return this.http.get(this.url+"/GetItemsForThisParent", {params:new HttpParams().set("", parentId)});
   }
 
   public CreateItem (item:Item)

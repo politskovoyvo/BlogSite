@@ -1,4 +1,8 @@
 <div>
+    <div *ngIf="loading">
+      <h1>Идет загрузка...</h1>
+    </div>
+
     <div class="three-col-grid">
         <div class="grid-item">
             <app-items (selectParentId)="GetCorrectItems($event)"></app-items>

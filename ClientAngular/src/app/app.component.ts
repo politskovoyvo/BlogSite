@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   _repository: DataService;
 
+  loading:boolean= false;
   public ParentId: number;
   CorrectItems:Post[]=new Array<Post>();
 
@@ -24,8 +25,15 @@ export class AppComponent implements OnInit {
 
   GetCorrectItems(id: number)
   {
+    this.loading = true;
+
+    //Test
+    setInterval(()=> console.log("ожидание"),  1500);
+
     this.CorrectItems = [];
     this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
     console.log(this.CorrectItems);
+
+    this.loading = false;
   }
 }
