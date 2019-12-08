@@ -1,16 +1,18 @@
-export class Post 
+export class Post
 {
-    constructor (id:number, name:string, link:string, image:string, parentId:number) 
-    { 
+    constructor (id:number, name:string, link:string, image:string, parentId:number)
+    {
         this.id = id;
         this.name = name;
         this.link = link;
         this.image = image;
         this.parentId = parentId;
     }
-    id:number; 
+    id:number;
     name:string;
-    link:string; 
-    image:string; 
+    link:string;
+    image:string;
     parentId:number;
+    isAnimate:boolean = false;
+    postSize:number = 200;
 }

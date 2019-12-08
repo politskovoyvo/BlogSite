@@ -10,12 +10,17 @@ import { ItemsComponent } from './components/items/items.component';
 import { ContentComponent } from './components/content/content.component';
 import { FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {StyleDirective} from "./Directives/style.directive";
+import {AngularResizeElementModule} from "angular-resize-element";
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsComponent,
-    ContentComponent
+    ContentComponent,
+    StyleDirective
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularResizeElementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

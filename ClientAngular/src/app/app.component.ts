@@ -12,9 +12,9 @@ import {Post} from "@models/Post";
 export class AppComponent implements OnInit {
 
   _repository: DataService;
+  selectItemId:number;
 
-  loading:boolean= false;
-  public ParentId: number;
+  loading:boolean = false;
   CorrectItems:Post[]=new Array<Post>();
 
   constructor(repository: DataService) {
@@ -27,12 +27,10 @@ export class AppComponent implements OnInit {
   {
     this.loading = true;
 
-    //Test
-    setInterval(()=> console.log("ожидание"),  1500);
-
     this.CorrectItems = [];
+    this.selectItemId = id;
+
     this._repository.GetItemsForSelectFolder(id, this.CorrectItems).then(r => r);
-    console.log(this.CorrectItems);
 
     this.loading = false;
   }

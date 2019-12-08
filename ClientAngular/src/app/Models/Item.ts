@@ -1,7 +1,7 @@
 export class Item
 {
-    constructor (id:number, folderName:string, parent:number, status:string = null) 
-    { 
+    constructor (id:number=0, folderName:string, parent:number, status:string = null)
+    {
         this.id = id;
         this.folderName = folderName;
         this.parent = parent;

@@ -7,7 +7,13 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
+  if (window['ngRef']) {
+    window['ngRef'].destroy();
+  }
+  window['ngRef'] = ref;
+})
   .catch(err => console.error(err));

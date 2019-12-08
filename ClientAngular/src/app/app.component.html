@@ -3,13 +3,18 @@
       <h1>Идет загрузка...</h1>
     </div>
 
-    <div class="three-col-grid">
-        <div class="grid-item">
+  <div class="div-head">
+
+  </div>
+    <div class="div-main">
+        <div class="div-left">
             <app-items (selectParentId)="GetCorrectItems($event)"></app-items>
         </div>
 
-        <div class="grid-item-right">
-            <app-content [Posts]="CorrectItems"></app-content>
+        <div class="div-right">
+            <app-content [Posts]="CorrectItems"
+                         [ParentId]="selectItemId">
+            </app-content>
         </div>
     </div>
 </div>

@@ -33,7 +33,8 @@ export class ItemsComponent implements OnInit {
     this.dataSource.data = this.TreeItems;
   }
 
-  constructor(repository: DataService) {
+  constructor(repository: DataService)
+  {
     this._repository = repository;
   }
 
@@ -42,5 +43,31 @@ export class ItemsComponent implements OnInit {
 
   SelectItem(folder: TreeItems) {
     this.selectParentId.emit(folder._item.id);
+  }
+
+  OnAddTreeItem(treeItem: TreeItems)
+  {
+    let newItem:Item = new Item(0, "new Folder", treeItem._item.id);
+    let newTreeItem :TreeItems = new TreeItems(newItem);
+    treeItem._children.push(newTreeItem);
+
+    //Место для получения отправки запроса на изменение и получения ответа
+    //После получения id, меняем его в списке и перестраиваем дерево...
+
+    this.dataSource.data = undefined;
+    this.dataSource.data = this.TreeItems;
+  }
+
+  OnDeleteItem(treeItem: TreeItems)
+  {
+    let newItem:Item = new Item(0, "new Folder", treeItem._item.id);
+    let newTreeItem :TreeItems = new TreeItems(newItem);
+    treeItem._children.push(newTreeItem);
+
+    //Место для получения отправки запроса на изменение и получения ответа
+    //После получения id, меняем его в списке и перестраиваем дерево...
+
+    this.dataSource.data = undefined;
+    this.dataSource.data = this.TreeItems;
   }
 }

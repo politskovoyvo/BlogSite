@@ -17,18 +17,20 @@ export class DataService
       return this.http.get(this.url);
   }
 
-  public GetAllPost (parentId:any)
+  public GetAllPost(parentId:any)
   {
       return this.http.get(this.url+"/GetItemsForThisParent", {params:new HttpParams().set("", parentId)});
   }
 
-  public CreateItem (item:Item)
-  {
-      return this.http.post(this.url, item);
+  public async CreateItem(item:Post) {
+    this.http.post<Post>(this.url+"/OnAddItem/", item).subscribe((i:Post) => item.id = i.id);
   }
 
-  public async FillFoldersArray (array : Item[] )
-  {
+  public async OnDeleteItem(id:number){
+    this.http.delete(this.url+"/OnDeleteItem/", {params:new HttpParams().set("", `${id}`)}).subscribe();
+  }
+
+  public async FillFoldersArray (array : Item[] ) {
     await this.getItems().toPromise().then((element:Item[]) =>
         element.forEach((i:Item) =>
             array.push(new Item( i.id, i.folderName,i.parent,i.status))));

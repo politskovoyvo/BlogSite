@@ -119,6 +119,13 @@
       <favorite_root url="file://$PROJECT_DIR$/ClientAngular/src/app/app-routing.module.ts" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
     </favorites_list>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -175,6 +182,29 @@
       <workItem from="1574545047722" duration="2960000" />
       <workItem from="1574700107398" duration="1799000" />
       <workItem from="1574800948810" duration="2731000" />
+      <workItem from="1574873458093" duration="6110000" />
+      <workItem from="1574891791159" duration="687000" />
+      <workItem from="1574914263452" duration="14587000" />
+      <workItem from="1575044325858" duration="12811000" />
+      <workItem from="1575108244788" duration="7258000" />
+      <workItem from="1575132804541" duration="4558000" />
+      <workItem from="1575227849580" duration="3895000" />
+      <workItem from="1575259935215" duration="1871000" />
+      <workItem from="1575304823892" duration="6581000" />
+      <workItem from="1575346557949" duration="1243000" />
+      <workItem from="1575389468525" duration="2550000" />
+      <workItem from="1575400084937" duration="1784000" />
+      <workItem from="1575403902138" duration="2842000" />
+      <workItem from="1575475663531" duration="205000" />
+      <workItem from="1575475987421" duration="7888000" />
+      <workItem from="1575521110142" duration="1171000" />
+      <workItem from="1575563143913" duration="4408000" />
+      <workItem from="1575606245579" duration="746000" />
+      <workItem from="1575649618688" duration="1005000" />
+      <workItem from="1575660783638" duration="2664000" />
+      <workItem from="1575755208421" duration="1347000" />
+      <workItem from="1575757597881" duration="767000" />
+      <workItem from="1575795005928" duration="5939000" />
     </task>
     <servers />
   </component>

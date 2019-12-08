@@ -1,7 +1,7 @@
 .example-tree-invisible {
     display: none;
   }
-  
+
   .example-tree ul,
   .example-tree li {
     margin-top: 0;
@@ -14,3 +14,22 @@
     height: 200px;
     margin: 10px;
   }
+
+  .div-head {
+    background: black;
+    height: 70px;
+    width: 100%;
+  }
+
+  .div-left {
+    display:inline-block;
+    width: 300px;
+  }
+
+.div-right {
+}
+
+.div-main {
+  position: relative;
+  display: flex;
+}
