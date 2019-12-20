@@ -23,8 +23,7 @@ p {
   animation-name: PostUp;
   animation-duration: 3s;
   animation-iteration-count: 1;
-  width: 400px;
-  height: 400px;
+  animation-fill-mode: forwards;
 }
 .animation-down-post {
   animation-name: PostDown;

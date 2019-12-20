@@ -12,21 +12,20 @@ import {Post} from "@models/Post";
 export class AppComponent implements OnInit {
 
   _repository: DataService;
-  selectItemId:number;
 
-  loading:boolean = false;
+  selectItemId :number;
+  loading :boolean;
+  animationToLeftRight :boolean = true;
   CorrectItems:Post[]=new Array<Post>();
 
   constructor(repository: DataService) {
     this._repository = repository;
   }
 
-    ngOnInit() { }
+  ngOnInit() { }
 
   GetCorrectItems(id: number)
   {
-    this.loading = true;
-
     this.CorrectItems = [];
     this.selectItemId = id;
 

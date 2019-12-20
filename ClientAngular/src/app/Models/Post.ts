@@ -13,6 +13,6 @@ export class Post
     link:string;
     image:string;
     parentId:number;
-    isAnimate:boolean = false;
+    isAnimate:boolean = undefined;
     postSize:number = 200;
 }

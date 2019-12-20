@@ -1,16 +1,25 @@
-<div >
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+<div>
+
+<button class="btn-menu"
+        (click)="DisableFree()">Свернуть</button>
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl"
+          class="example-tree"
+          [ngClass]="{'mat-tree-disable':animationToLeftRight}">
 
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
     <li class="mat-tree-node"  (mouseleave)="node.isVisible=false" (mouseenter)="node.isVisible=true">
       <button mat-icon-button disabled ></button>
 
-        <button (click)="SelectItem(node)">{{node.name}}</button>
+      <button (click)="SelectItem(node)">{{node.name}}</button>
 
       <div *ngIf=node.isVisible>
-          <button (click)="OnAddTreeItem(node)" class="btn-circle btn-add"></button>
+          <img (click)="OnAddTreeItem(node)"
+               [src]="removeImage"
+               class = "image-icons">
           <button (click)="OnDeleteItem(node)" class="btn-circle btn-remove"></button>
       </div>
+
     </li>
   </mat-tree-node>
 

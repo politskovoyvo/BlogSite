@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, ElementRef, Input, Renderer2} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import { Post } from "@models/Post";
 import {DataService} from "../../Services/DataService";
 
@@ -14,8 +14,10 @@ export class ContentComponent {
 
   @Input() Posts :Post[] = [];
   @Input() ParentId :number;
+  @Input() Loading :boolean;
 
   readonly maxSize :number = 390;
+  style = "";
 
   constructor(repository: DataService) {
     this.repositoty = repository;
@@ -37,5 +39,19 @@ export class ContentComponent {
 
     let deleteIndex:number = this.Posts.indexOf(item);
     this.Posts.splice(deleteIndex,1)
+  }
+
+  async OnEditItem(item:Post) {
+    await this.repositoty.OnEditItem(item);
+  }
+
+  OnUpSize(post: Post) {
+    post.isAnimate = true;
+    this.style = "animation-up-post";
+  }
+
+  OnDownSize(post: Post) {
+    post.isAnimate = false;
+    this.style = "animation-down-post";
   }
 }

@@ -21,6 +21,8 @@ export class ItemsComponent implements OnInit {
   FolderItems: Item[] = [];
   TreeItems: TreeItems[] = [];
   visible = false;
+  animationToLeftRight = false;
+  removeImage = "assets/images/clear.png";
 
   @Output() selectParentId = new EventEmitter<number>();
   treeControl = new NestedTreeControl<TreeItems>(node => node._children);
@@ -51,9 +53,6 @@ export class ItemsComponent implements OnInit {
     let newTreeItem :TreeItems = new TreeItems(newItem);
     treeItem._children.push(newTreeItem);
 
-    //Место для получения отправки запроса на изменение и получения ответа
-    //После получения id, меняем его в списке и перестраиваем дерево...
-
     this.dataSource.data = undefined;
     this.dataSource.data = this.TreeItems;
   }
@@ -64,10 +63,11 @@ export class ItemsComponent implements OnInit {
     let newTreeItem :TreeItems = new TreeItems(newItem);
     treeItem._children.push(newTreeItem);
 
-    //Место для получения отправки запроса на изменение и получения ответа
-    //После получения id, меняем его в списке и перестраиваем дерево...
-
     this.dataSource.data = undefined;
     this.dataSource.data = this.TreeItems;
+  }
+
+  DisableFree() {
+    this.animationToLeftRight=!this.animationToLeftRight;
   }
 }

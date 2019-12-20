@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {StyleDirective} from "./Directives/style.directive";
 import {AngularResizeElementModule} from "angular-resize-element";
-
+import {DropdownModule} from "ngx-dropdown";
 
 
 @NgModule({
@@ -20,7 +20,7 @@ import {AngularResizeElementModule} from "angular-resize-element";
     AppComponent,
     ItemsComponent,
     ContentComponent,
-    StyleDirective
+    StyleDirective,
   ],
   imports: [
     BrowserModule,
@@ -39,3 +39,4 @@ import {AngularResizeElementModule} from "angular-resize-element";
 })
 
 export class AppModule { }
+

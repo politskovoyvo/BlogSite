@@ -5,7 +5,8 @@
        (getSizeEvent)="Onresize($event, post)"
        [ngStyle]="{'background-image': 'url(' + post.image + ')' }"
        [ngClass]="{'animation-up-post': post.isAnimate,
-                   'animation-down-post': post.isAnimate == false }" >
+                   'animation-down-post': post.isAnimate === false}" >
+
     <div>
       <p>id:{{post.id}}</p>
       <p>Name:{{post.name}}</p>
@@ -28,23 +29,30 @@
     <p>{{post.postSize}}</p>
     <div>
       <div *ngIf="post.postSize>maxSize">
+
+        <button (click)="OnEditItem(post)"
+                class="btn-circle">
+        </button>
         <button class="btn-circle"></button>
-        <button class="btn-circle"></button>
+
       </div>
 
       <div class="div-updateSize">
+
         <button *ngIf="post.postSize<250"
                 class="btn-circle btn-up"
-                (click)="post.isAnimate = true">
+                (click)="OnUpSize(post)">
         </button>
         <button *ngIf="post.postSize>250"
                 class="btn-circle btn-down"
-                (click)="post.isAnimate = false">
+                (click)="OnDownSize(post)">
         </button>
         <button class="btn-circle" (click)="OnDeletePost(post)"></button>
+
       </div>
 
     </div>
+
   </div>
 
   <div (click)="OnAddPost()"

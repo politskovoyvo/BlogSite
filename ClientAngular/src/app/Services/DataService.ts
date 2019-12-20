@@ -8,7 +8,9 @@ import { Item } from "@models/Item";
 
 export class DataService
 {
-  private url = 'https://localhost:44343/api/Repository';
+  //private url = 'https://localhost:44343/api/Repository';
+  private url = 'https://api.detree.ru/api/repository';
+
 
   constructor (private http: HttpClient) { }
 
@@ -28,6 +30,10 @@ export class DataService
 
   public async OnDeleteItem(id:number){
     this.http.delete(this.url+"/OnDeleteItem/", {params:new HttpParams().set("", `${id}`)}).subscribe();
+  }
+
+  public async OnEditItem(item:Post){
+    await this.http.post(this.url + '/OnEditItem/', item).subscribe();
   }
 
   public async FillFoldersArray (array : Item[] ) {

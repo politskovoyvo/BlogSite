@@ -133,7 +133,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/app/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ClientAngular/src/app/Images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -144,7 +144,11 @@
     <property name="ts.external.directory.path" value="D:\MyProj\BlogGitClient\ClientAngular\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\assets\images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\Images" />
       <recent name="D:\MyProj\BlogGitClient\ClientAngular\src\app\components" />
     </key>
   </component>
@@ -204,7 +208,14 @@
       <workItem from="1575660783638" duration="2664000" />
       <workItem from="1575755208421" duration="1347000" />
       <workItem from="1575757597881" duration="767000" />
-      <workItem from="1575795005928" duration="5939000" />
+      <workItem from="1575795005928" duration="8002000" />
+      <workItem from="1575908499655" duration="2407000" />
+      <workItem from="1575920821329" duration="1537000" />
+      <workItem from="1575955238476" duration="761000" />
+      <workItem from="1575996292472" duration="7647000" />
+      <workItem from="1576041694759" duration="596000" />
+      <workItem from="1576181653724" duration="15622000" />
+      <workItem from="1576876119324" duration="13000" />
     </task>
     <servers />
   </component>

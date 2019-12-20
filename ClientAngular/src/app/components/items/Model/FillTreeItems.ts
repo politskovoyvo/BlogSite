@@ -7,7 +7,7 @@ export class FillTreeItem
   {
     repositoryFolderItems.forEach(i =>
     {
-      if (i.parent == 1)
+      if (i.parent == 0)
       {
         let item:Item = new Item (i.id, i.folderName, i.parent);
         let treeItem:TreeItems = new TreeItems(item);

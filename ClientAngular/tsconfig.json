@@ -3,7 +3,8 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@models/*": ["app/Models/*"]
+      "@models/*": ["app/Models/*"],
+      "@images/*": ["app/Images/*"]
       },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -20,9 +21,7 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-
-
+    ]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
